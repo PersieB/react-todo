@@ -1,0 +1,2 @@
+# Creating a Modern CRUD Todo App in React with Vite
+Vite was chosen because it allows browsers to optimize the loading of modules for more efficient and faster application performance. When it comes time to deploy your application to production, Vite has a built-in build command that automatically optimizes your app for deployment, ensuring that your application runs smoothly.

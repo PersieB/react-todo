@@ -5,11 +5,12 @@ import {CheckIcon} from '@heroicons/react/24/outline';
 import {PencilSquareIcon} from '@heroicons/react/24/outline';
 import {TrashIcon} from '@heroicons/react/24/outline';
 
-const TaskItem = ({task}) =>{
+const TaskItem = ({task, deleteTask, toggleTask}) =>{
     const [isChecked, setIsChecked] = useState(task.checked);
 
     const handleCheckBoxChange = (e) => {
         setIsChecked(!isChecked);
+        toggleTask(task.name);
     }
     return(
         <li className={styles.task}>
@@ -33,7 +34,7 @@ const TaskItem = ({task}) =>{
                 <button className = 'btn' aria-label = {`Update ${task.name} Task`}>
                     <PencilSquareIcon strokeWidth={2} width={24} height={24} />
                 </button>
-                <button className = {`btn ${styles.delete}`} aria-label = {`Delete ${task.name} Task`}>
+                <button className = {`btn ${styles.delete}`} aria-label = {`Delete ${task.name} Task`} onClick={() => deleteTask(task.id)}>
                     <TrashIcon strokeWidth={2} width={24} height={24} />
                 </button>
             </div>  
